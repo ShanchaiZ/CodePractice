@@ -65,7 +65,7 @@ function pickIt(arr) {
             console.log(even);
         }
     }
-    return([odd, even]);
+    return ([odd, even]);
 }
 
 // Pseudocode:
@@ -74,3 +74,18 @@ function pickIt(arr) {
 // 3a. if the array element HAS A REMINDER OF 2 (meaning initial number is odd) => then push the i to the odd array.
 // 3b. otherwise: push to even array at arr[i]
 // 4. return both the arrays where odd is first and even is second 
+
+
+// REFACTORED SOLUTIONS:
+
+function pickIt(arr) {
+
+    let odd = []
+    let even = []
+
+    for (var x of arr) {
+        ((x % 2) ? odd : even).push(x)
+    }
+
+    return [odd, even]
+}
