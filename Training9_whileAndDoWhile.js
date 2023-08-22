@@ -135,3 +135,23 @@ do {
 } while (j <= 10) {
 
 }
+
+// Use a while loop to write out the following sentence in console: " the speed of the car is xMPH" (where x is the number of miles per hour). start at 0 and go all the way to 100 mph in increments of 10.
+let mph = 0;
+
+while (mph <= 100) {
+    console.log(`The speed of the car is ${mph}mph!`);
+    mph += 10;
+}
+console.log("number 1 finished")
+
+
+let a = 1;
+let b = 10;
+
+do {
+    console.log(a);
+    a++;
+} while (a <= b) {
+
+}
