@@ -102,3 +102,36 @@ function padIt(str, n) {
     }
     return str;
 }
+
+// ========================================================================================================================
+// Other examples of while loop:
+let i = 0; //initializer
+
+while (i <= 10) { //condition
+    console.log(i); //code block
+    i++  // final expression
+}
+
+const colors = ["red", "blue", "yellow", "orange", "purple"]; //Array of colors
+
+let color = 0; //initializer
+
+while (color < colors.length) { // condition
+    console.log(`${colors[color]}`); //first colors is the name of the array that we are accessing data, [colors] is the index that we are accessing from the array.
+    color++; //incrementing it
+}
+
+
+//=================================================================================================================================
+// Other examples of DO..While loop:
+// difference between while and do..while is do..while loop is executed AT LEAST once even if condition is not met.
+// best practice to figure out which loop to use: FOR LOOP = U KNOW ahead of time how many exact loops u have to do. u do while and do..while loop when number of loops or iterations are unknown.
+
+let j = 0;
+
+do {
+    console.log(`The number is ${j}`);
+    j++;
+} while (j <= 10) {
+
+}
