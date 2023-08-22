@@ -78,3 +78,27 @@ const asteriskCount = 10;
 
 const paddedString = padIt(inputString, asteriskCount);
 console.log(paddedString);
+
+
+// OTHER SOLUTIONS AND REFACTORED:
+
+// Solution 1:
+function padIt(str, n) {
+    while (n > 0) {
+        if (n % 2 === 0) {
+            str = str + "*";
+        } else {
+            str = "*" + str;
+        }
+        n--;
+    }
+    return str;
+}
+
+// Solution 2:
+function padIt(str, n) {
+    while (n > 0) {
+        str = n-- % 2 ? '*' + str : str + '*';
+    }
+    return str;
+}
