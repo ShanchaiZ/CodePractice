@@ -81,37 +81,43 @@
 // Exercise:
 
 // PseudoCode:
-// 1. create an array:
-const phrase = [
-    {
-        "This": "apple",
-        "taste": "like",
-        "seven": "bad",
-        "sour": "plums"
-    }
-]
+// 1. create an array (empty):
+const five = []
 // 2. traverse the object, checking each key and value => using for..in
-for (let phrase in obj) {
+for (let key in obj) {
+
 }
 // 3. if length of key === 5 then PUSH the KEY to your array.
-if (key[i] === 5) {
-    phrase.push(obj[i])
+if (key.length === 5) {
+    five.push(key)
 }
 
 // 4. if length of value === 5 then PUSH the value to the Array.
-if (value === 5) {
-    phrase.push(obj[i])
+if (obj[key].length === 5) {
+    five.push(obj[key])
 }
 // 5. return the Array
-return phrase;
+return five;
 
-// first attempt:
-for (let phrase in obj) {
-    if (key[i] === 5) {
-        phrase.push(obj[i]);
-    };
-    if (value === 5) {
-        phrase.push(obj[i]);
-    };
-    return phrase;
+// Actual solution: 
+function giveMeFive(obj) {
+    var five = [];
+
+    for (var key in obj) {
+        if (key.length === 5) five.push(key);
+        if (obj[key].length === 5) five.push(obj[key]);
+    }
+    return five;
 }
+
+
+// ===============================================================================
+// Complex Actual Code (wihtout using For in):
+const giveMeFive = obj =>/*for (in) */[].concat(...Object.entries(obj)).filter(element => element.length === 5)
+
+// 1. Create an array using CONCAT method which merges 2+ arrays but what we concat? .concat
+// 1a. we concat the OBJECT.ENTRIES which returns an array of the objects own string keyed property (key,value pair) => ...
+// this is the code: const giveMeFive = obj =>[].concat(...Object.entries(obj))
+
+// 2. then we FILTER out anything that has 5 characters (note filter method creates a new array with all elements that pass the test ) => .filter( element === 5 )
+// bonus: to pass the for in pass add a comment :(
